@@ -19,21 +19,21 @@ class Asteroid extends PVector {
     pPos.set(pos);
   }
 
-  void update(Planet[] p) {
+  void update(Planet[] planet) {
     if (alive) {
       acc.set(0, 0, 0);
 
-      for (int i = 0; i<p.length;i++) {
-        float ang = calcAngle(p[i]);
+      for (int i = 0; i<planet.length;i++) {
+        float ang = calcAngle(planet[i]);
         float g = 1;
-        float force = (float)(g*(mass * p[i].mass)/(Math.pow(dist(this, p[i]), 2)));
+        float force = (float)(g*(mass * planet[i].mass)/(Math.pow(dist(this, planet[i]), 2)));
         acc.add(-force/mass * cos(ang), force/mass * sin(ang), 0);
       }
 
       vel.add(acc);
       add(vel);
       checkEdges();
-      checkCollision(p);
+      checkCollision(planet);
     }
   }
 
@@ -57,10 +57,10 @@ class Asteroid extends PVector {
     }
   }
 
-  void checkCollision(Planet[] p) {
-    for (int i = 0;i<p.length; i++) {
+  void checkCollision(Planet[] planet) {
+    for (int i = 0;i<planet.length; i++) {
       float dis = dist(this, p[i]);
-      if (dis<sqrt(this.mass/PI)+sqrt(p[i].mass/PI)) {
+      if (dis<sqrt(this.mass/PI)+sqrt(planet[i].mass/PI)) {
         alive=false;
       }
     }
