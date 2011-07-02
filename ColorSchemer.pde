@@ -11,28 +11,47 @@ class ColorSchemer {
     }
   }
 
-  void newScheme(int = schemeID) {
-    currentScheme = floor(random(0,totalSchemes));
+  void newScheme() {
+    currentScheme = floor(random(0, totalSchemes));
   }
 
   void setStroke(Asteroid a) {
-    /*
-     * switch statement to figure out what r/g/b/a to set
-     * POSSIBLE SCHEMES
-     * based on x,y pos
-     * transparent lines
-     * distance from planets
-     * "heat map"
-     */
-    float r = 0;
-    float g = 0;
-    float b = 0;
-    float a = 0;
+    float r = 255;
+    float g = 255;
+    float b = 255;
+    float a = 255;
+    switch(currentSchemeID) {
+    case 0:
+      r = 255;
+      g = 255;
+      b = 255;
+      a = 10;
+      break;
 
-    stroke(r, g, b, a);
-  }
-  int getTotalParticles(){
-    return totalParticles[currentSchemeID];
+    case 1:
+      r = a.dist(a.pPos)*8;
+      g = 40;
+      b = 80;
+      break;
+
+    case 2:
+      r = (a.x/width)*255;
+      g = (a.y/height)*255;
+      b =255-(a.x/width)*127-(a.x/width)*127);
+      break;
+
+      //case 3:
+      //  break;
+    default:
+      r = a.dist(a.pPos)*8;
+      g = 40;
+      b = 80;
+      break;
+
+      stroke(r, g, b, a);
+    }
+    int getTotalParticles() {
+      return totalParticles[currentSchemeID];
+    }
   }
 }
-
