@@ -6,6 +6,7 @@ class Asteroid extends PVector {
   boolean  alive;
 
   Asteroid() {
+    super();
     alive = true;
     pPos = new PVector();
     vel = new PVector();
