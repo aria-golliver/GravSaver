@@ -1,6 +1,6 @@
 ParticleGenerator gen;
 void setup(){
-  size(screen.width/2,screen.height/2);
+  size(screen.width,screen.height);
   frameRate(24);
   smooth();
   gen = new ParticleGenerator();

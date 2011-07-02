@@ -50,7 +50,7 @@ class ColorSchemer {
       break;
     }
     stroke(r, g, b, a);
-    println(r + " " + asteroid.x + " " + asteroid.y + " " + asteroid.dist(asteroid.pPos) + " " + currentSchemeID);
+    //println(r + " " + asteroid.x + " " + asteroid.y + " " + asteroid.dist(asteroid.pPos) + " " + currentSchemeID);
   }
   int getTotalParticles() {
     return totalParticles[currentSchemeID];

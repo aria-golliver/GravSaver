@@ -33,7 +33,7 @@ class ParticleGenerator {
     for ( int i = 0; i<asteroid.length; i++) {
       asteroid[i] = new Asteroid();
     }
-    
+
     for ( int i = 0; i<planet.length; i++) {
       planet[i] = new Planet();
     }
@@ -53,8 +53,10 @@ class ParticleGenerator {
         asteroid[i].vel.set(v*cos(a), v*sin(a), 0);
         asteroid[i].acc.set(0, 0, 0);
         asteroid[i].changePosition(cornerPositions[cnr]);
-        resets--;
+        asteroid[i].alive = true;
       }
+
+      resets--;
     } 
     else {
       resetGenerator();
@@ -72,8 +74,13 @@ class ParticleGenerator {
       asteroid[i].update(planet);
     }
     for (int i = 0; i<asteroid.length; i++) {
-      if (asteroid[i].alive) return;
+      if (asteroid[i].alive) 
+      {
+        //print("ALIVE");
+        return;
+      }
     }
+    print("DEAD");
     resetAsteroids();
   }
 
@@ -81,7 +88,7 @@ class ParticleGenerator {
   void draw() {
     for (int i = 0; i<asteroid.length; i++) {
       colorScheme.setStroke(asteroid[i]);
-      stroke(255);
+      //stroke(255);
       asteroid[i].draw();
     }
   }

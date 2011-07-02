@@ -1,3 +1,3 @@
 class Planet extends PVector{
-  float mass;
+  float mass = 10000;
 }
