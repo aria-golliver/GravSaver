@@ -46,7 +46,7 @@ class ParticleGenerator {
   }
 
   void resetAsteroids() {
-    if (resets != 0) {
+    if (resets != 0 || true) {
       for (int i = 0; i<asteroid.length; i++) {
         float a = random(-PI, PI);
         float v = random(0, 4);
@@ -55,7 +55,6 @@ class ParticleGenerator {
         asteroid[i].changePosition(cornerPositions[cnr]);
         asteroid[i].alive = true;
       }
-
       resets--;
     } 
     else {
@@ -73,6 +72,7 @@ class ParticleGenerator {
     for (int i = 0; i<asteroid.length; i++) {
       asteroid[i].update(planet);
     }
+
     for (int i = 0; i<asteroid.length; i++) {
       if (asteroid[i].alive) 
       {
@@ -80,10 +80,11 @@ class ParticleGenerator {
         return;
       }
     }
+
     print("DEAD");
     resetAsteroids();
+    resetPlanets();
   }
-
 
   void draw() {
     for (int i = 0; i<asteroid.length; i++) {

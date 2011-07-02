@@ -59,7 +59,7 @@ class Asteroid extends PVector {
 
   void checkCollision(Planet[] planet) {
     for (int i = 0;i<planet.length; i++) {
-      float dis = dist(this, p[i]);
+      float dis = dist(this, planet[i]);
       if (dis<sqrt(this.mass/PI)+sqrt(planet[i].mass/PI)) {
         alive=false;
       }
@@ -67,8 +67,10 @@ class Asteroid extends PVector {
   }
 
   void draw() {
-    line(x, y, pPos.x, pPos.y);
-    pPos.set(x, y, 0);
+    if(alive){
+      line(x, y, pPos.x, pPos.y);
+      pPos.set(x, y, 0);
+    }
   }
   float calcAngle (PVector a) {
     return -(float)(Math.atan2(y-a.y, x-a.x ));
