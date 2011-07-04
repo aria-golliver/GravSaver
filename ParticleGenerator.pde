@@ -64,7 +64,7 @@ class ParticleGenerator {
 
   void resetPlanets() {
     for (int i = 0; i<planet.length; i++) {
-      planet[i].set(random(100, width), random(100, height), 0);
+      planet[i].set(random(0, width), random(0, height), 0);
     }
   }
 
