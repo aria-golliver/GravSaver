@@ -1,0 +1,14 @@
+#ignore binaries
+application.*/
+*.[oa]
+*.java
+*.class
+*.html
+*.htm
+*.css
+*.jar
+*.plist
+*.icns
+*.exe
+*.swp
+
