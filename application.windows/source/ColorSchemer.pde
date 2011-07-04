@@ -16,6 +16,7 @@ class ColorSchemer {
 
   void newScheme() {
     currentSchemeID = floor(random(0, totalSchemes));
+    currentSchemeID = 2;
   }
 
   void setStroke(Asteroid asteroid) {

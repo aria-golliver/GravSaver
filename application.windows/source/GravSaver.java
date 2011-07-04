@@ -140,6 +140,7 @@ class ColorSchemer {
 
   public void newScheme() {
     currentSchemeID = floor(random(0, totalSchemes));
+    currentSchemeID = 2;
   }
 
   public void setStroke(Asteroid asteroid) {
