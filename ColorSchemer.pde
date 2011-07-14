@@ -1,14 +1,12 @@
 class ColorSchemer {
   private int          currentSchemeID;
-  private final int    totalSchemes = 4;
+  private final int    totalSchemes = 2;
   private int[]        totalParticles;
-
+  int maxParticles = 0;
   ColorSchemer() {
     super();
+    
     totalParticles = new int[totalSchemes];
-    for (int i = 0; i<totalParticles.length; i++) {
-      totalParticles[i] = 1000;
-    }
     totalParticles[0] = 8000;
     totalParticles[1] = 8000;
     currentSchemeID = 0;
@@ -16,7 +14,7 @@ class ColorSchemer {
 
   void newScheme() {
     currentSchemeID = floor(random(0, totalSchemes));
-    currentSchemeID = 2;
+    currentSchemeID = 1;
   }
 
   void setStroke(Asteroid asteroid) {
@@ -31,13 +29,13 @@ class ColorSchemer {
       b = 50;
       a = 10;
       break;
-    case 1:
+    case 2:
       r = 255;
       g = 255;
       b = 255;
       a = 10;
       break;
-    case 2:
+    case 3:
       r = asteroid.dist(asteroid.pPos)*8;
       g = 40;
       b = 80;

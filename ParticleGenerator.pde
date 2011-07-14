@@ -5,7 +5,6 @@ class ParticleGenerator {
   Asteroid[] asteroid;
   Planet[] planet;
   ColorSchemer colorScheme;
-
   ParticleGenerator() {
     cornerPositions = new PVector[4];
     cornerPositions[0] = new PVector(-20, -20, 0);
