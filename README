@@ -1,3 +1,0 @@
-Basically an open source screensaver, I'm going to try to port it over to openFrameworks, but we'll see how that goes.
-
-Right now, on windows, if you want it to be a screensaver, change .exe to .scr and you're golden.
