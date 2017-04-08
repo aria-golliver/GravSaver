@@ -1,4 +1,0 @@
-git add *.pde
-git commit -m 'description'
-git push origin master
-git pull git@github.com:aarongolliver/GravSaver.git
